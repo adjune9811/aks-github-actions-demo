@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akswebsite-deployment
+  labels:
+    app: akswebsite
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: akswebsite
+
+  template:
+    metadata:
+      labels:
+        app: akswebsite
+
+    spec:
+      containers:
+      - name: akswebsite
+        image: adjune9811/akswebsite:latest
+        ports:
+        - containerPort: 80

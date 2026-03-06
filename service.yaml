@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: akswebsite-service
+
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: akswebsite
+
+  ports:
+  - port: 80
+    targetPort: 80
